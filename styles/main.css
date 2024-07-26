@@ -1,0 +1,141 @@
+.navbar {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 1000px;
+  margin-top: 30px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 20px;;
+  padding: 20px;
+}
+
+.navbar a {
+  font-weight: 500;
+  font-size: 18px;
+} 
+
+.hero-section {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1300px;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.hero-section h1 {
+  font-weight: 500;
+  font-size: 50px;
+  text-align: center;
+}
+
+.hero-section p {
+  font-size: 16px;
+}
+
+.main-section {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  width: 1400px;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.features-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  height: 300px;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 20px;
+  gap: 20px;
+  background-color: white;
+}
+
+.features-container input {
+  background-color: rgba(250,251,255,255);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border: none;
+  padding: 10px;
+  width: 300px;
+}
+
+.features-container button {
+  background-color: rgb(255, 200, 97);
+  width: 100px;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  
+  border-radius: 20px;
+  gap: 20px;
+  
+}
+
+.predicted-grade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 600px;
+  height: 130px;
+}
+
+.performance-level {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 600px;
+  height: 130px;
+
+}
+
+.label {
+  font-weight: 500;
+}
+
+.performance-level {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.progress-container {
+  height: 0.8rem;
+  width: 32rem;
+  border-radius: 0.4rem;
+
+  background: #05f10d;
+}
+
+.progress-container .progress {
+  height: 100%;
+  width: 0;
+  border-radius: 0.4rem;
+
+  background: #ff4754;
+
+  transition: width 0.4s ease;
+}

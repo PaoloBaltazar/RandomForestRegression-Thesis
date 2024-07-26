@@ -1,7 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Performance Prediction</title>
+    <title>Thesis</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/general.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="navbar">
+        <a>Home</a>
+        <a>About</a>
+        <a>Settings</a>
+    </div>
+    
+
+    <div class="hero-section">
+        <h1>
+            Random Forest Regression for Academic Performance Prediction
+        </h1>
+        <p>
+            Prediction of Academic Performance Level of Graduating Elementary Students 
+        </p>
+    </div>
+
+    <div class="main-section">
+        <div class="features-container">
+            <p class="label">Fill in the fields below:</p>
+            <input type="number" id="attendance" placeholder="Attendance">
+            <input type="number" id="financial_situation" placeholder="Financial Situation">
+            <input type="number" id="learning_environment" placeholder="Learning Environment">
+            <input type="number" id="previous_grades" placeholder="Previous Grades">
+            <button onclick="predict()">Predict</button>
+        </div>
+    
+        <div class="result-container">
+            <div class="predicted-grade">
+                <p class="label">Predicted Grade</p>
+                <p id="result"> --</p>
+            </div>
+
+            <div class="performance-level">
+                <p class="label">Academic Performance Level</p>
+
+                <p>Outstanding</p>
+                <div class="progress-container">
+                    
+                    <div class="progress"></div>
+                    
+                </div>
+            </div>
+
+            
+            
+        </div>
+    </div>
+    
+    
+
     <script>
         async function predict() {
             const data = {
@@ -20,17 +79,8 @@
             });
 
             const result = await response.json();
-            document.getElementById('result').innerText = 'Predicted Grade: ' + result.prediction;
+            document.getElementById('result').innerText = result.prediction;
         }
     </script>
-</head>
-<body>
-    <h1>Predict Student Performance</h1>
-    <input type="number" id="attendance" placeholder="Attendance">
-    <input type="number" id="financial_situation" placeholder="Financial Situation">
-    <input type="number" id="learning_environment" placeholder="Learning Environment">
-    <input type="number" id="previous_grades" placeholder="Previous Grades">
-    <button onclick="predict()">Predict</button>
-    <p id="result"></p>
 </body>
 </html>
