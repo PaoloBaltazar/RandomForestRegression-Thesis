@@ -29,6 +29,7 @@ grid_search.fit(X_train, y_train)
 
 best_rfr = grid_search.best_estimator_
 
+
 # Saving the trained model and scaler to a file
 joblib.dump(best_rfr, 'random_forest_model.pkl')
 joblib.dump(scaler, 'scaler.pkl')
