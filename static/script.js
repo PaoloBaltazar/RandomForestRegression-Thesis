@@ -1,14 +1,13 @@
-document.getElementById('prediction-form').addEventListener('submit', function(event) {
-  event.preventDefault();
+document.getElementById('prediction-form').addEventListener('submit', function(e) {
+  e.preventDefault();
 
-  const formData = new FormData(event.target);
+  const attendance = document.getElementsByName('attendance')[0].value;
+  const financialSituation = document.getElementsByName('financial_situation')[0].value;
+  const learningEnvironment = document.getElementsByName('learning_environment')[0].value;
+  const previousGrades = document.getElementsByName('previous_grades')[0].value;
+
   const data = {
-      features: [
-          parseFloat(formData.get('attendance')),
-          parseFloat(formData.get('financial_situation')),
-          parseFloat(formData.get('learning_environment')),
-          parseFloat(formData.get('previous_grades'))
-      ]
+      features: [attendance, financialSituation, learningEnvironment, previousGrades]
   };
 
   fetch('/predict', {
@@ -20,9 +19,7 @@ document.getElementById('prediction-form').addEventListener('submit', function(e
   })
   .then(response => response.json())
   .then(data => {
-      const resultDiv = document.getElementById('prediction-result');
-      resultDiv.innerHTML = `Predicted Grade: ${data.prediction}`;
+      document.getElementById('prediction-result').innerText = 'Predicted Grade: ' + data.prediction;
   })
   .catch(error => console.error('Error:', error));
-  
 });

@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import joblib
 import numpy as np
+import os
 
 app = Flask(__name__, static_folder='static')
 CORS(app)  # Enable CORS for all routes
@@ -17,8 +18,6 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
-    model = joblib.load('random_forest_model.pkl')
-    scaler = joblib.load('scaler.pkl')
     features = np.array(data['features']).reshape(1, -1)
     features = scaler.transform(features)
     prediction = model.predict(features)
